@@ -40,7 +40,7 @@ public class ListTest {
    
 	
 /*
- * 取得List中元素的方法
+ * 通过 get方法 取得List中元素的方法
  */
 	public void testGet() {
 		//获取list的长度
@@ -53,7 +53,7 @@ public class ListTest {
 	}
 	
 	/*
-	 *通过迭代器来遍历 List
+	 *通过迭代器iterator 来遍历 List
 	 */
 	public void testIterator() {  
 		//通过集合的iterator方法，取得迭代器实例 
@@ -76,23 +76,24 @@ public class ListTest {
 	}
 	
 	/*
-	 * 修改List中的元素
+	 * 通过set方法，修改List中的元素
 	 */
 	public void testModify() {
 		coursesToSelect.set(3,new Course("5", "毛概"));
 	}
 	
 	/*
-	 * 删除List中的元素
+	 *通过 remove方法 删除List中的元素
 	 */
 	public void testRemove() {
 		//Course cr3=(Course) coursesToSelect.get(3);
 		 //coursesToSelect.remove(3);
-	Course[] courses= {(Course) coursesToSelect.get(2),(Course) coursesToSelect.get(3)};
+		Course[] courses= {(Course) coursesToSelect.get(2),(Course) coursesToSelect.get(3)};
 		 coursesToSelect.removeAll(Arrays.asList(courses));
 		 
 	}
 	
+
 	
 	public static void main(String[] args) {
 		ListTest lt=new ListTest();
