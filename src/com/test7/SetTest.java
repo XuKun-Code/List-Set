@@ -42,11 +42,23 @@ public class SetTest {
 		/*
 		 * 通过for each方法访问集合元素
 		 */
-		public  void testForEach() {
+		public void testForEach() {
 			for(Object obj:coursesToSelect) {
 				Course cr2=(Course) obj;
 				System.out.println("课程"+cr2.id+":"+cr2.name);
 			}
+		}
+		
+	/*
+	 * 测试List的contains方法	
+	 */
+		public void testListContains() {
+			//取得备选课程序列的第0个元素
+			Course course=coursesToSelect.get(0);
+			//打印输出coursesToSelected是否包含course.name
+			System.out.println("取得课程"+course.name);
+			System.out.println("备选课程中是否包含课程："+course.name+","+coursesToSelect.contains(course));//某个序列是否包含某个对象
+			
 		}
 		
 

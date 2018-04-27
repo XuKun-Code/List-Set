@@ -1,28 +1,20 @@
 package com.test7;
 import java.util.Scanner;
 
-/**
- * 
- * @title ChessboardCoverage
- * @describe 棋盘覆盖：
- *           利用分治法，将方形棋盘分成4部分，如果该特殊点在某一部分，我们就去递归他，如果不在某一部分，我们假设一个点为特殊点，同样递归下去，知道全覆盖。
- * 
- *           左上角的子棋盘（若不存在特殊方格）：则将该子棋盘右下角的那个方格假设为特殊方格；
- *           右上角的子棋盘（若不存在特殊方格）：则将该子棋盘左下角的那个方格假设为特殊方格；
- *           左下角的子棋盘（若不存在特殊方格）：则将该子棋盘右上角的那个方格假设为特殊方格；
- *           右下角的子棋盘（若不存在特殊方格）：则将该子棋盘左上角的那个方格假设为特殊方格；
- */
 public class Test {
     // 定义棋盘的大小：2^k，需要的骨牌数是：(4^k-1)/3
-    private static int BOARD_SIZE = 8;
+	static Scanner scanner1 = new Scanner(System.in);
+	 static int K=scanner1.nextInt(); 
+   static int BOARD_SIZE=(int) Math.pow(2, K);
+	
     // 定义一个二维数组用来模拟棋盘
     private static int[][] board = new int[BOARD_SIZE][BOARD_SIZE];
     // 定义一个全局变量，用来记录骨牌的编号
     private static int tile = 0;
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("棋盘的大小为：" + BOARD_SIZE);
+    	Scanner scanner = new Scanner(System.in);
+    	System.out.println("棋盘的大小为：" + BOARD_SIZE);
         System.out.println("请输入特殊方格所在的行号：");
         int dr = scanner.nextInt();
         System.out.println("请输入特殊方格所在的列号：");
@@ -36,12 +28,11 @@ public class Test {
     }
 
     /**
-     * 
-     * @param tr：棋盘左上角方格的行号
-     * @param tc:棋盘左上角方格的列号
-     * @param dr：特殊方格所在的行号
-     * @param dc：特殊方格所在的列号
-     * @param size：当前棋盘的大小
+     *  tr：棋盘左上角方格的行号
+     *  tc:棋盘左上角方格的列号
+     *  dr：特殊方格所在的行号
+     *  dc：特殊方格所在的列号
+     *  size：当前棋盘的大小
      */
     private static void chessBoard(int tr, int tc, int dr, int dc, int size) {
         /* 1、当前棋盘的大小是 1 就返回 */
